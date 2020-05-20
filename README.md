@@ -1,5 +1,8 @@
 # stunning-chainsaw
 
+<html>
+<header><title>This is title</title></header>
+<body>
 Hello world
-
-How does this work?
+</body>
+</html>

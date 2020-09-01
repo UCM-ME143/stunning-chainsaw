@@ -3,19 +3,22 @@
     "path": "~/GitHub/stunning-chainsaw/index.Rmd",
     "project_path": "index.Rmd",
     "type": "r_markdown",
-    "hash": "203621217",
+    "hash": "1209888390",
     "contents": "",
     "dirty": false,
     "created": 1598917391816.0,
     "source_on_save": false,
     "relative_order": 4,
-    "properties": {},
+    "properties": {
+        "cursorPosition": "2,22",
+        "scrollLine": "0"
+    },
     "folds": "",
-    "lastKnownWriteTime": 1598917228,
+    "lastKnownWriteTime": 1598919711,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1598917228,
+    "last_content_update": 1598919711692,
     "read_only": false,
     "read_only_alternatives": []
 }

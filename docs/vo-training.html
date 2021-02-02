@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Digital Systems | A Minimal Book Example</title>
+  <title>Chapter 7 VO Training | A Minimal Book Example</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Digital Systems | A Minimal Book Example" />
+  <meta property="og:title" content="Chapter 7 VO Training | A Minimal Book Example" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Digital Systems | A Minimal Book Example" />
+  <meta name="twitter:title" content="Chapter 7 VO Training | A Minimal Book Example" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="root-locus.html"/>
-<link rel="next" href="crm-training.html"/>
+<link rel="prev" href="crm-training.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -174,80 +174,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="digital-systems" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Digital Systems</h1>
-<p>In most modern systems, we’ve moved away from analog controllers to digital controllers for a number of reasons.</p>
-<div id="discrete-time" class="section level2">
-<h2><span class="header-section-number">5.1</span> Discrete Time</h2>
-<p>The basis for a digital system is in discrete time signals.</p>
-<p>Discrete-Time Signals are</p>
-<ol style="list-style-type: decimal">
-<li>Composed of samples at discrete instants of time;</li>
-<li>Often defined at evenly spaced intervals of time;</li>
-<li>Undefined inbetween samples;</li>
-</ol>
-An example can be seen in Figure <a href="digital-systems.html#fig:nice-fig2">5.1</a>. The signal is defined only for the samples and undefined (or rather, not drawn) in between.
-<div class="figure" style="text-align: center"><span id="fig:nice-fig2"></span>
-<img src="stunning-chainsaw_files/figure-html/nice-fig2-1.png" alt="Here is a nice figure!" width="80%" />
-<p class="caption">
-Figure 5.1: Here is a nice figure!
-</p>
-</div>
-<div id="notation" class="section level3">
-<h3><span class="header-section-number">5.1.1</span> Notation</h3>
-<p>Given an analog signal <span class="math inline">\(y(t)\)</span>, we can sample it at every <span class="math inline">\(T\)</span> seconds. The resulting signal can be written as <span class="math inline">\(y(kT)\)</span> where <span class="math inline">\(k\)</span> now represents the sample step index.</p>
-<p>If the signal is sampled at regular increments of time T, then T is also known as the Sample Period. The inverse of the sample period is the sample rate.</p>
-<ul>
-<li>Sample Period - <span class="math inline">\(T\)</span> (seconds)</li>
-<li>Sample Rate - <span class="math inline">\(1/T\)</span> (1/seconds = Hertz), <span class="math inline">\(f_s\)</span></li>
-</ul>
-<p>The notation <span class="math inline">\(y(kT)\)</span> indicates a value of <span class="math inline">\(y{t}\)</span> at <span class="math inline">\(t=kT\)</span>. The notation <span class="math inline">\(y[k]\)</span> denotes a discrete time signal that is only defined only for <span class="math inline">\(k\)</span> an integer. Written more succinctly: Parentheses indicate continuous time, brackets indicate discrete time.</p>
-<p>It is important to reiterate that a discrete-time signal is only defined for <span class="math inline">\(k\)</span> is an integer. A signal <span class="math inline">\(f[k]\)</span> is defined when <span class="math inline">\(k\)</span> is an integer; <span class="math inline">\(f[1.6]\)</span> does not exist. However, the index for a discrete time signal may be positive or negative. A sequence, written as <span class="math inline">\({f[n]}\)</span>, may describe <span class="math inline">\(...,f[-2],f[-1],f[0],f[1],f[2],...\)</span>.</p>
-</div>
-<div id="discrete-amplitude-signal" class="section level3">
-<h3><span class="header-section-number">5.1.2</span> Discrete-Amplitude Signal</h3>
-<p>Most commonly, a discrete time signal is also a Discrete Amplitude signal. A discrete amplitude signal is a signal for which <span class="math inline">\(y[n]\)</span> has only a finite possible amplitudes, in contrast to a continuous amplitude signal, for which the amplitude can assume any value <span class="math inline">\(\infty &lt; y[n] &lt; \infty\)</span>.</p>
-<p>A discrete time, discrete amplitude signal is known as a Digital Signal. An example of a digital signal is the output of an analog-to-digital converter which converts a continuous time, continuous amplitude signal into a signal readable by a computer. The output of the analog-to-digital converter is represented by an eight bit binary number - which can only assume <span class="math inline">\(2^8 = 256\)</span> unique values.</p>
-</div>
-</div>
-<div id="fundamental-discrete-time-signals" class="section level2">
-<h2><span class="header-section-number">5.2</span> Fundamental Discrete Time Signals}</h2>
-<div id="unit-step-function-and-unit-impulse-function" class="section level3">
-<h3><span class="header-section-number">5.2.1</span> Unit Step Function and Unit Impulse Function</h3>
-<p>The first two fundamental discrete time signals are the Unit Step Function and Unit Impulse Function.</p>
-<p>The unit step function is defined by:
-<span class="math display">\[\begin{equation} \label{unitstepfunction}
-u[k] = \begin{cases}
-0, &amp; k = -1, -2, \ldots \\
-1, &amp; k = 0, 1, 2, \ldots\\
-\end{cases}
-\end{equation}\]</span></p>
-<p>The output of a unit step function <span class="math inline">\(f[k]\)</span> is 0 for all integers of <span class="math inline">\(k\)</span> less than 0, and is 1 for all integers of <span class="math inline">\(k\)</span> equal to or greater than 0.</p>
-<p>Similarly, the unit impulse function is defined by:
-<span class="math display">\[\begin{equation}
-\delta[k] = \begin{cases}
-1, k = 0 \\
-0, otherwise\\
-\end{cases}
-\end{equation}\]</span></p>
-<p>The output of a unit impulse function <span class="math inline">\(\delta[k]\)</span> is 1 for <span class="math inline">\(k=0\)</span> and is 0 for all other values of <span class="math inline">\(k\)</span>.</p>
-</div>
-<div id="time-shifting-time-scaling-time-reversal" class="section level3">
-<h3><span class="header-section-number">5.2.2</span> Time Shifting, Time Scaling, Time Reversal</h3>
-<p>Given a discrete time signal, it can be utilized with three time transformations: Discrete Time Shifting, Discrete Time Scaling and Discrete Time Reversal.</p>
-<p><strong>Discrete Time Shift</strong>
-Given a signal <span class="math inline">\(y[k]\)</span>, the signal can be shifted along the time axis as <span class="math inline">\(y[k-2]\)</span>. This shifts the signal such that it starts 2 steps later - in otherwords, it delays the signal.</p>
+<div id="vo-training" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> VO Training</h1>
+<iframe src="trainings/VO_training/story.html" width="100%" height="720px">
+</iframe>
 
-</div>
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="root-locus.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="crm-training.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="crm-training.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
